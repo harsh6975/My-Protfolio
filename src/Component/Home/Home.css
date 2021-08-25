@@ -1,0 +1,43 @@
+.home {
+  background: url(../../Images/austin-poon-JO_S6ewBqAk-unsplash.jpg);
+  background-size: cover !important;
+  height: 100vh;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.9;
+  width: 100%;
+}
+.name-social-container {
+  position: relative;
+}
+.name {
+  font-size: 5rem;
+  letter-spacing: 0.1rem;
+  color: whitesmoke;
+  font-weight: 700px;
+  margin-top: 16.5rem;
+}
+
+.slogan{
+  color:whitesmoke;
+  margin: 10px 0;
+  font-size: 25px;
+}
+.social-list{
+  list-style: none;
+  padding-left: 0%;
+}
+.social-list li {
+  display: inline-block;
+  margin:  0px 8px;
+  font-weight: 100;
+  font-size: 0.9rem;
+}
+
+.social-list li a {
+  color: white;
+  text-decoration: none;
+}
+.social-list li :hover{
+  color: gray;
+}
