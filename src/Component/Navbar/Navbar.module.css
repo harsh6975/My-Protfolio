@@ -1,8 +1,12 @@
+.navbar {
+  text-align: center;
+}
+
 .navbar-list {
   list-style: none;
-  padding-left: 0%;
 }
-.navbar-list li {
+
+.navbar_list li {
   display: inline-block;
   padding: 10px 20px;
   color: white;
@@ -10,11 +14,20 @@
   font-weight: 1000;
   cursor: pointer;
 }
-.navbar-list li :hover {
+
+.navbar_list li :hover {
   color: red;
   border-bottom: 3px solid red;
 }
-navbar-list-active li{
-  color: red;
+
+.navbar_list-active li {
+  color: goldenrod;
   border-bottom: 3px solid red;
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar_list li {
+    font-size: 29px;
+    font-weight: 800;
+  }
 }

@@ -6,10 +6,15 @@
   background-attachment: fixed;
   opacity: 0.9;
   width: 100%;
+  z-index: -1;
 }
-.name-social-container {
+
+.name_social_container {
   position: relative;
+  text-align: center;
 }
+
+
 .name {
   font-size: 5rem;
   letter-spacing: 0.1rem;
@@ -23,21 +28,24 @@
   margin: 10px 0;
   font-size: 25px;
 }
-.social-list{
+
+.social_list{
   list-style: none;
   padding-left: 0%;
 }
-.social-list li {
+
+.social_list li {
   display: inline-block;
   margin:  0px 8px;
   font-weight: 100;
   font-size: 0.9rem;
 }
 
-.social-list li a {
+.social_list li a {
   color: white;
   text-decoration: none;
 }
-.social-list li :hover{
+
+.social_list li :hover{
   color: gray;
 }
