@@ -33,7 +33,7 @@
   letter-spacing: 0.1rem;
   color: whitesmoke;
   font-weight: 700px;
-  margin-top: -80px;
+  margin-top: -120px;
 }
 
 .slogan {
@@ -54,12 +54,40 @@
 }
 
 .social_list li a {
-  color: white;
+  display: block;
+  padding: 8px 13px;
+  font-size: 26px;
   text-decoration: none;
+  border-radius: 5px;
+  position: relative;
+  top: 0;
+  color: #fff;
+  transition: all 0.4s;
 }
 
-.social_list li :hover {
-  color: gray;
+.social_list li:hover a {
+  top: -20px;
+  color: #4eacff;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.7);
+  transition: all 0.4s;
+}
+
+.social_list li a:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 42%;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 5px 5px 0 5px;
+  transition: all 0.4s;
+}
+
+.social_list li:hover a:after {
+  border-color: white transparent transparent transparent;
+  transition: all 0.4s;
 }
 
 @media screen and (max-width: 1300px) {
@@ -80,6 +108,7 @@
 @media screen and (max-width: 1000px) {
   .name {
     font-size: 3.5rem;
+    margin-top: 0px;
   }
 }
 

@@ -8,7 +8,6 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";
 import style from "./Hero.module.css";
-import Navbar from "../Navbar/Navbar";
 import herobg from "../../Images/hero.jpg";
 
 function Hero() {
