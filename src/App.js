@@ -1,20 +1,18 @@
 import "./App.css";
-import About from "./Component/About/About";
-import Home from "./Component/Home/Home";
+import Hero from "./Component/Hero/Hero";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./Component/Navbar/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <section id="Home">
-      <Home />
-      </section>
-      <section id="About">
-      <About />
-      </section>
-      {/* <section id="Home">
-      <Skill />
-      </section> */}
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <section id="Hero">
+          <Hero />
+        </section>
+      </div>
+    </BrowserRouter>
   );
 }
 
