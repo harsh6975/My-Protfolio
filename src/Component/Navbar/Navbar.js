@@ -13,8 +13,8 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import styles from "./navbar.module.css";
+import MenuIcon from "@mui/icons-material/Menu"; 
+import styles from "./Navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
 import MiniNavbar from "./MiniNavbar";
 import logo from "../../Images/logo.png";

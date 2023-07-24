@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./navbar.module.css";
+import styles from "./Navbar.module.css";
 import WifiCalling3Icon from "@mui/icons-material/WifiCalling3";
 import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
