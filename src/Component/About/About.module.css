@@ -35,4 +35,12 @@
   .feature {
     width: 80%;
   }
+  .about {
+    font-size: 35px;
+    width: 30vh;
+    margin-top: 50px;
+  }
+  .underLine {
+    margin-bottom: 50px;
+  }
 }
