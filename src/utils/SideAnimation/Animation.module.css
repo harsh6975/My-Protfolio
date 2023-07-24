@@ -1,0 +1,111 @@
+/* Animation.module.css */
+
+@keyframes slideFromLeft08 {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromLeft1 {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight08 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight1 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromTop08 {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromTop1 {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromBottom08 {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromBottom1 {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animation-container {
+  overflow: hidden;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+.left-enter-08 {
+  animation: slideFromLeft08 0.8s ease;
+}
+
+.left-enter-1 {
+  animation: slideFromLeft1 1s ease;
+}
+
+.right-enter-08 {
+  animation: slideFromRight08 0.8s ease;
+}
+
+.right-enter-1 {
+  animation: slideFromRight1 1s ease;
+}
+
+.top-enter-08 {
+  animation: slideFromTop08 0.8s ease;
+}
+
+.top-enter-1 {
+  animation: slideFromTop1 1s ease;
+}
+
+.bottom-enter-08 {
+  animation: slideFromBottom08 0.8s ease;
+}
+
+.bottom-enter-1 {
+  animation: slideFromBottom1 1s ease;
+}
