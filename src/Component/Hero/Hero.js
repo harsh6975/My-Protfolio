@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Typed from "react-typed";
 import Snowfall from "react-snowfall";
 // import SnowStorm from "react-snowstorm";
@@ -11,9 +11,30 @@ import style from "./Hero.module.css";
 import herobg from "../../Images/hero.jpg";
 
 function Hero() {
+  const [flake, setFlake] = useState(200);
+  const handleResize = () => {
+    const width = window.innerWidth;
+    console.log(width);
+    if (width <= 768) {
+      setFlake(50);
+    } else if (width <= 1000) {
+      setFlake(100);
+    } else {
+      setFlake(200);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className={style.hero}>
-      <Snowfall snowflakeCount={100} />
+      <Snowfall snowflakeCount={flake} />
       <img src={herobg} alt="herobg" className={style.herobg}></img>
       <div className={style.overlay}></div>
       <div className={`${style.content}`}>
