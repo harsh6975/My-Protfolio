@@ -15,10 +15,14 @@ function Hero() {
   const handleResize = () => {
     const width = window.innerWidth;
     console.log(width);
-    if (width <= 768) {
+    if (width <= 500) {
+      setFlake(10);
+    } else if (width <= 768) {
       setFlake(50);
     } else if (width <= 1000) {
       setFlake(100);
+    } else if (width <= 1300) {
+      setFlake(150);
     } else {
       setFlake(200);
     }
@@ -47,7 +51,7 @@ function Hero() {
           />
         </div>
         <div className={style.slogan}>
-          <p>Build your own world</p>
+          <p>Step into the Realm of Enchantia</p>
         </div>
         <ul className={style.social_list}>
           <li>
