@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.hexacontainer {
+  position: relative;
+}
+
+.hexagon {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  cursor: pointer;
+}
+
+.hexagon polygon {
+  fill: #005c63;
+  stroke: #00b2ac;
+  stroke-width: 5;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: stroke-dashoffset 3s linear;
+}
+
+.hexagon:hover polygon {
+  stroke-dashoffset: 0;
+}
+
+.icon {
+  position: absolute;
+  left: 32%;
+  top: 28%;
+}
+
+.container h2 {
+  font-size: 18px;
+}
+
+.container h5 {
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .hexagon {
+    width: 100px;
+    height: 100px;
+  }
+  .container h2 {
+    font-size: 16px;
+  }
+
+  .container h5 {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    min-width: 190px;
+    margin: 10px;
+  }
+}
