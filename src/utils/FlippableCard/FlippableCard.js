@@ -6,12 +6,13 @@ import Card from "../../Component/FlipCard/Card";
 import Animation from "../SideAnimation/Animation";
 
 function FlippableCard() {
-  const [showFront, setShowFront] = useState(true);
+  const [showFront, setShowFront] = useState(false); // Initialize showFront as false
+  const [isVisible, setIsVisible] = useState(false); // New state variable to track visibility
   const flipRef = useRef(null);
 
   useEffect(() => {
     const handleIntersection = (entries) => {
-      if (entries[0].isIntersecting) {
+      if (entries[0].isIntersecting && entries[0].intersectionRatio === 1) {
         setTimeout(() => {
           setShowFront(false);
         }, 1200);
@@ -23,7 +24,7 @@ function FlippableCard() {
     };
 
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.1,
+      threshold: 1, // When the entire component is visible
     });
 
     if (flipRef.current) {
@@ -32,14 +33,21 @@ function FlippableCard() {
 
     return () => {
       if (flipRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(flipRef.current);
       }
     };
   }, []);
 
+  // useEffect to reset the isVisible state when the component is hidden
+  useEffect(() => {
+    if (!isVisible) {
+      setShowFront(false);
+    }
+  }, [isVisible]);
+
   return (
     <Animation direction="left" duration="1">
+      {/* Render the FlippableCard component only when it is visible */}
       <div ref={flipRef} className="flippable-card-container">
         <CSSTransition in={showFront} timeout={300} classNames="flip">
           <Card
