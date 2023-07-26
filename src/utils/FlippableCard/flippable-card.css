@@ -3,3 +3,10 @@
   width: 400px;
   perspective: 1000px;
 }
+
+@media screen and (max-width: 768px) {
+  .flippable-card-container {
+    height: 400px;
+    width: 300px;
+  }
+}
