@@ -31,6 +31,14 @@
   flex-wrap: wrap;
 }
 
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .feature {
     width: 80%;

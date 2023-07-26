@@ -13,7 +13,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu"; 
+import MenuIcon from "@mui/icons-material/Menu";
 import styles from "./Navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
 import MiniNavbar from "./MiniNavbar";
@@ -95,7 +95,9 @@ function Navbar() {
         <AppBar
           component="nav"
           sx={{
-            backgroundColor: isHeroSectionOver ? "#0e2a47" : "transparent",
+            backgroundImage: isHeroSectionOver
+              ? " linear-gradient(25deg, #011a2e , #071017)"
+              : "tansparent",
             position: isHeroSectionOver ? "fixed" : "relative",
             boxShadow: isHeroSectionOver
               ? "0 4px 12px rgba(0,0,0,0.15)"
