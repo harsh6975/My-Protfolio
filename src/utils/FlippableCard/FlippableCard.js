@@ -7,7 +7,6 @@ import Animation from "../SideAnimation/Animation";
 
 function FlippableCard() {
   const [showFront, setShowFront] = useState(false); // Initialize showFront as false
-  const [isVisible, setIsVisible] = useState(false); // New state variable to track visibility
   const flipRef = useRef(null);
 
   useEffect(() => {
@@ -33,17 +32,11 @@ function FlippableCard() {
 
     return () => {
       if (flipRef.current) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(flipRef.current);
       }
     };
   }, []);
-
-  // useEffect to reset the isVisible state when the component is hidden
-  useEffect(() => {
-    if (!isVisible) {
-      setShowFront(false);
-    }
-  }, [isVisible]);
 
   return (
     <Animation direction="left" duration="1">
