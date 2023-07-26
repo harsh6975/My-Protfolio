@@ -6,10 +6,11 @@ import DevicesIcon from "@mui/icons-material/Devices";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import GppGoodIcon from "@mui/icons-material/GppGood";
 import Animation from "../../utils/SideAnimation/Animation";
+import FlippableCard from "../../utils/FlippableCard/FlippableCard";
 
 const features = [
   {
-    name: "User-Centric Design",
+    name: "User - Centric Design",
     content: "Intuitive experiences for seamless engagement.",
     icon: <EmojiObjectsIcon style={{ fontSize: "40px", color: "white" }} />,
   },
@@ -37,7 +38,7 @@ function About() {
   return (
     <div className={style.container}>
       <Animation direction="left" duration="08">
-        <h1 className={style.about}>ABOUT</h1>
+        <h1 className={style.about}>ABOUT Me</h1>
       </Animation>
       <Animation direction="left" duration="1">
         <div className={style.underLine}></div>
@@ -47,6 +48,10 @@ function About() {
         {features.map((feature, index) => {
           return <Feature feature={feature} />;
         })}
+      </div>
+      <div className={style.details}>
+        <FlippableCard />{" "}
+        <div className={style.skills}>{/* <FlippableCard /> */}</div>
       </div>
     </div>
   );
