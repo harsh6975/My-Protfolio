@@ -4,9 +4,15 @@
   perspective: 1000px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
   .flippable-card-container {
-    height: 550px;
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .flippable-card-container {
     width: 300px;
   }
 }
+

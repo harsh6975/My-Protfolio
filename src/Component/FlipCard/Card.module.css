@@ -31,19 +31,30 @@
   width: 90%;
   flex-direction: column;
   transform: rotateY(180deg);
-  background-image: linear-gradient(25deg, #011a2e , #071017);
+  background-image: linear-gradient(25deg, #011a2e, #071017);
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
-  padding: 20px;
+  padding: 30px;
   margin-left: 5%;
   margin-right: 5%;
   color: white;
 }
 
+.cardback h1,
+.cardback h2,
+.cardback h3,
+.cardback h4,
+.cardback h5,
+.cardback p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #db8e35;
+}
+
 .cardback p {
   text-align: justify;
-  padding: 10px;
   font-size: 12px;
+  color: white;
 }
 
 .cardback h2 {
@@ -55,4 +66,13 @@
   justify-content: center;
   align-items: center;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.cardback h5,
+.cardback h4 {
+  text-align: center;
+}
+
+.cardback h5 {
+  color: white;
 }

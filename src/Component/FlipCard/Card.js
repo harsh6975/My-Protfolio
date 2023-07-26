@@ -15,7 +15,7 @@ function Card({ onMouseEnter, onMouseLeave, onClick }) {
       </div>
       <div className={styles.cardback}>
         <h2>Harsh Sinha</h2>
-        <h4>BTech IIT GUWAHATI (2019-2023)</h4>
+        <h4>BTech IIT GUWAHATI ( 2019 - 2023 )</h4>
         <p>
           Hello there! I'm a highly organized and hard-working B-Tech graduate
           from IIT Guwahati. With a passion for practical problem-solving and a
