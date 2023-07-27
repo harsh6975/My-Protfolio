@@ -56,12 +56,24 @@
 
 @media screen and (max-width: 800px) {
   .container {
-    width: 30vh;
+    width: 45vh;
+  }
+  .percentageText {
+    margin-left: 20px;
   }
 }
 
 @media screen and (max-width: 500px) {
   .container {
-    width: 25vh;
+    width: 40vh;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .container {
+    width: 38vh;
+  }
+  .label {
+    font-size: 12px; 
   }
 }
