@@ -1,0 +1,29 @@
+.tilt-component {
+  height: 300px;
+  width: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .tilt-component {
+    width: 350px;
+    height: 260px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tilt-component {
+    width: 320px;
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .tilt-component {
+    width: 300px;
+    height: 200px;
+  }
+}
