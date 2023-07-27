@@ -4,6 +4,12 @@
   perspective: 1000px;
 }
 
+@media screen and (max-width: 8500px) {
+  .flippable-card-container {
+    width: 370px;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .flippable-card-container {
     width: 350px;
