@@ -94,7 +94,12 @@ const LineAnimation = ({ data }) => {
               style={{
                 position: "absolute",
                 left: `${progress - 5}%`,
-                fontSize: data.label === "C++" ? "20px" : "25px",
+                fontSize:
+                  data.label === "C++"
+                    ? window.innerWidth <= 650
+                      ? "15px"
+                      : "20px"
+                    : "25px",
                 marginTop: data.label === "C++" ? "0px" : "6px",
                 color: "#071017",
                 marginRight: "20px",
