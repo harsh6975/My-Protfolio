@@ -8,7 +8,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 28px;
+  height: 28px !important;
   margin: 10px;
 }
 
@@ -18,7 +18,7 @@
   color: #db8e35;
   width: 150px;
   text-align: center;
-  height: 28px;
+  height: 28px !important;
   font-size: 14px;
   font-weight: 600;
   display: flex;
