@@ -27,7 +27,7 @@
 }
 
 .progressBar {
-  width: 100%;
+  width: calc(100% - 25px); /* Set a fixed width with some margin for the percentage text */
   height: 100%;
   display: flex;
   align-items: center;
