@@ -7,7 +7,16 @@ import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import GppGoodIcon from "@mui/icons-material/GppGood";
 import Animation from "../../utils/SideAnimation/Animation";
 import FlippableCard from "../../utils/FlippableCard/FlippableCard";
-
+import LineAnimation from "../../utils/LineAnimation/Animation";
+import { RiReactjsFill } from "react-icons/ri";
+import { IoLogoNodejs } from "react-icons/io5";
+import { DiMongodb } from "react-icons/di";
+import { TbBrandJavascript } from "react-icons/tb";
+import { TbBrandTypescript } from "react-icons/tb";
+import { AiFillHtml5 } from "react-icons/ai";
+import { BiLogoCss3 } from "react-icons/bi";
+import { TbBrandReactNative } from "react-icons/tb";
+import { TbBrandNextjs } from "react-icons/tb";
 const features = [
   {
     name: "User - Centric Design",
@@ -34,6 +43,19 @@ const features = [
   },
 ];
 
+const skills = [
+  { label: "C++", icon: "C++", percentage: "90" },
+  { label: "ReactJs", icon: <RiReactjsFill />, percentage: "80" },
+  { label: "NodeJs", icon: <IoLogoNodejs />, percentage: "80" },
+  { label: "MongoDB", icon: <DiMongodb />, percentage: "70" },
+  { label: "JavaScript", icon: <TbBrandJavascript />, percentage: "80" },
+  { label: "TypeScript", icon: <TbBrandTypescript />, percentage: "70" },
+  { label: "HTML", icon: <AiFillHtml5 />, percentage: "90" },
+  { label: "CSS", icon: <BiLogoCss3 />, percentage: "85" },
+  { label: "React Native", icon: <TbBrandReactNative />, percentage: "60" },
+  { label: "NextJS", icon: <TbBrandNextjs />, percentage: "55" },
+];
+
 function About() {
   return (
     <div className={style.container}>
@@ -50,8 +72,14 @@ function About() {
         })}
       </div>
       <div className={style.details}>
-        <FlippableCard />{" "}
-        <div className={style.skills}>{/* <FlippableCard /> */}</div>
+        <div className={style.profile}>
+          <FlippableCard />
+        </div>
+        <div className={style.skills}>
+          {skills.map((skill) => {
+            return <LineAnimation data={skill} />;
+          })}
+        </div>
       </div>
     </div>
   );

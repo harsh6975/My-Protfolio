@@ -33,10 +33,17 @@
 
 .details {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   margin: 20px;
   width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .details {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 768px) {

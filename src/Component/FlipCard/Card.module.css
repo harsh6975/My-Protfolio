@@ -40,12 +40,9 @@
   color: white;
 }
 
-.cardback h1,
 .cardback h2,
 .cardback h3,
-.cardback h4,
-.cardback h5,
-.cardback p {
+.cardback h6 {
   margin-top: 5px;
   margin-bottom: 5px;
   color: #db8e35;

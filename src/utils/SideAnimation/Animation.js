@@ -7,7 +7,7 @@ const Animation = ({ direction, duration, children }) => {
 
   useEffect(() => {
     const handleIntersection = (entries) => {
-      if (entries[0].isIntersecting) {
+      if (entries[0].isIntersecting && window.innerWidth >= 768) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
