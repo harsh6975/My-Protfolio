@@ -1,6 +1,7 @@
 .container {
   width: 50vh;
   margin-left: 40px;
+  background-color: transparent;
 }
 
 .labelProgressContainer {
@@ -33,18 +34,13 @@
   border-radius: 0;
   margin-left: -10px;
   position: relative;
+  background-color: transparent;
 }
 
 .percentageText {
   margin-left: 15px;
   color: #071017;
   font-weight: 600;
-}
-
-.icon {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 1000px) {

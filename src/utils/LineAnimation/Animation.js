@@ -38,7 +38,6 @@ const LineAnimation = ({ data }) => {
   };
 
   useEffect(() => {
-    console.log("ef2")
     const handleIntersection = async (entries) => {
       if (entries[0].isIntersecting) {
         setIsVisible(true);
@@ -64,10 +63,8 @@ const LineAnimation = ({ data }) => {
   }, []);
 
   useEffect(() => {
-    console.log("ef1 out")
     if (isVisible) {
-      console.log("ef1 insi")
-      setProgress(0)
+      setProgress(0);
       const timer = setTimeout(() => {
         increamentPercentage();
       }, 1100);
@@ -86,6 +83,7 @@ const LineAnimation = ({ data }) => {
             <Progress
               percent={progress}
               strokeColor="#db8e35"
+              trailColor="transparent"
               strokeWidth={28}
               strokeLinecap="butt"
               showInfo={false}
