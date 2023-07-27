@@ -80,18 +80,20 @@ const LineAnimation = ({ data }) => {
         <div className={styles.labelProgressContainer}>
           <div className={styles.label}>{data.label}</div>
           <div className={styles.progressBar} style={{ position: "relative" }}>
-            <Progress
-              percent={progress}
-              strokeColor="#db8e35"
-              trailColor="transparent"
-              strokeWidth={28}
-              strokeLinecap="butt"
-              showInfo={false}
-            />
+            <div className={styles.progress}>
+              <Progress
+                percent={progress}
+                strokeColor="#db8e35"
+                trailColor="transparent"
+                strokeWidth={28}
+                strokeLinecap="butt"
+                showInfo={false}
+              />
+            </div>
             <div
               style={{
                 position: "absolute",
-                left: `${progress}%`,
+                left: `${progress - 8}%`,
                 fontSize: data.label === "C++" ? "20px" : "25px",
                 marginTop: data.label === "C++" ? "0px" : "6px",
                 color: "#071017",

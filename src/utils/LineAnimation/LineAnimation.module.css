@@ -27,7 +27,7 @@
 }
 
 .progressBar {
-  width: calc(100% - 25px); /* Set a fixed width with some margin for the percentage text */
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -37,8 +37,11 @@
   background-color: transparent;
 }
 
+.progress {
+  width: 90%;
+}
+
 .percentageText {
-  margin-left: 15px;
   color: #071017;
   font-weight: 600;
 }
@@ -54,8 +57,9 @@
   .container {
     width: 45vh;
   }
-  .percentageText {
-    margin-left: 20px;
+  .label {
+    width: 130px;
+    font-size: 12px;
   }
 }
 
