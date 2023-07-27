@@ -31,5 +31,7 @@
   flex-wrap: wrap;
   padding-left: 10%;
   padding-right: 10%;
-  background-image: linear-gradient(25deg, #011a2e, #071017);
+  background-image: url("../../Images/projectbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
