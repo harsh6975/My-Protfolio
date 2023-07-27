@@ -64,10 +64,11 @@ const LineAnimation = ({ data }) => {
 
   useEffect(() => {
     if (isVisible) {
+      const time = window.innerWidth <= 650 ? 100 : 1100;
       setProgress(0);
       const timer = setTimeout(() => {
         increamentPercentage();
-      }, 1100);
+      }, time);
       return () => {
         clearInterval(timer);
       };

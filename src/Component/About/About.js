@@ -60,25 +60,26 @@ function About() {
   return (
     <div className={style.container}>
       <Animation direction="left" duration="08">
-        <h1 className={style.about}>ABOUT Me</h1>
+        <h1 className={style.about}>ABOUT</h1>
       </Animation>
       <Animation direction="left" duration="1">
         <div className={style.underLine}></div>
       </Animation>
-
-      <div className={style.feature}>
-        {features.map((feature, index) => {
-          return <Feature feature={feature} />;
-        })}
-      </div>
-      <div className={style.details}>
-        <div className={style.profile}>
-          <FlippableCard />
-        </div>
-        <div className={style.skills}>
-          {skills.map((skill) => {
-            return <LineAnimation data={skill} />;
+      <div className={style.contentBox}>
+        <div className={style.feature}>
+          {features.map((feature, index) => {
+            return <Feature feature={feature} />;
           })}
+        </div>
+        <div className={style.details}>
+          <div className={style.profile}>
+            <FlippableCard />
+          </div>
+          <div className={style.skills}>
+            {skills.map((skill) => {
+              return <LineAnimation data={skill} />;
+            })}
+          </div>
         </div>
       </div>
     </div>
