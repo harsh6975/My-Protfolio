@@ -55,7 +55,7 @@
 
 @media screen and (max-width: 800px) {
   .container {
-    width: 45vh;
+    width: 500px;
   }
   .label {
     width: 130px;
@@ -63,17 +63,29 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .container {
-    width: 40vh;
+    width: 450px;
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 450px) {
   .container {
-    width: 38vh;
+    width: 400px;
   }
   .label {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .container {
+    width: 300px;
   }
 }

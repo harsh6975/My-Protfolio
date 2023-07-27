@@ -93,7 +93,7 @@ const LineAnimation = ({ data }) => {
             <div
               style={{
                 position: "absolute",
-                left: `${progress - 8}%`,
+                left: `${progress - 5}%`,
                 fontSize: data.label === "C++" ? "20px" : "25px",
                 marginTop: data.label === "C++" ? "0px" : "6px",
                 color: "#071017",
