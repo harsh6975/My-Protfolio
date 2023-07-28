@@ -2,6 +2,7 @@ import * as React from "react";
 import {
   AppBar,
   Box,
+  Button,
   CssBaseline,
   Drawer,
   Hidden,
@@ -15,44 +16,54 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import styles from "./Navbar.module.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
+
 import MiniNavbar from "./MiniNavbar";
 import logo from "../../Images/logo.png";
+import DownloadIcon from "@mui/icons-material/Download";
+import resume from "../../Images/Harsh Sinha Resume.pdf";
+import { AiFillHome } from "react-icons/ai";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai";
+import { AiOutlineContacts } from "react-icons/ai";
+import { SiAboutdotme } from "react-icons/si";
 
 const navItems = [
-  { name: "HOME", href: "/" },
-  { name: "ABOUT", href: "/" },
-  { name: "EXPERIENCE", href: "/" },
-  { name: "PROJECT", href: "/" },
-  { name: "CONTACT", href: "/" },
+  { name: "HOME", href: "Hero", icon: <AiFillHome /> },
+  { name: "ABOUT", href: "About", icon: <SiAboutdotme /> },
+  { name: "PROJECT", href: "Project", icon: <AiOutlineFundProjectionScreen /> },
 ];
 
 const drawerWidth = 240;
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState("");
   const [isHeroSectionOver, setIsHeroSectionOver] = React.useState(false);
-
-  const location = useLocation();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleDownloadPdf = () => {
+    const pdfPath = resume; // Replace with the actual path to your PDF file
+    const link = document.createElement("a");
+    link.href = pdfPath;
+    link.download = "Harsh Sinha Resume.pdf"; // Replace with the desired file name for the download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   React.useEffect(() => {
     const handleScroll = () => {
-      const scrollTop =
-        (typeof window !== "undefined" &&
-          window !== "undefined" &&
-          window.pageYOffset) ||
-        document.documentElement.scrollTop;
-
       // Determine if the hero section is over
       const heroSection = document.getElementById("Hero");
       if (heroSection) {
         const heroSectionRect = heroSection.getBoundingClientRect();
-        setIsHeroSectionOver(scrollTop >= heroSectionRect.bottom);
+        if (heroSectionRect.bottom <= 123) {
+          setIsHeroSectionOver(true);
+        } else {
+          setIsHeroSectionOver(false);
+        }
       }
     };
 
@@ -66,23 +77,66 @@ function Navbar() {
     };
   }, []);
 
-  React.useEffect(() => {
-    const path = location.pathname;
-    setActiveItem(path);
-  }, [location]);
-
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{
+        textAlign: "center",
+        color: "white",
+      }}
+    >
       <List>
         {navItems.map((item, index) => (
-          <Link to={item.href} key={index}>
+          <ScrollLink
+            activeClass={styles.menuactive}
+            to={item.href}
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className={styles.menu}
+            onClick={handleDrawerToggle}
+          >
             <ListItem disablePadding>
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item.name} />
+              <ListItemButton sx={{ textAlign: "left", marginLeft: "25%" }}>
+                {item.icon}
+                <ListItemText primary={item.name} sx={{ marginLeft: "10px" }} />
               </ListItemButton>
             </ListItem>
-          </Link>
+          </ScrollLink>
         ))}
+        <ScrollLink
+          activeClass={styles.menuactive}
+          to={"Contact"}
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className={styles.menu}
+          onClick={handleDrawerToggle}
+        >
+          <ListItem disablePadding>
+            <ListItemButton sx={{ textAlign: "left", marginLeft: "25%" }}>
+              <AiOutlineContacts />
+              <ListItemText primary="CONTACT" sx={{ marginLeft: "10px" }} />
+            </ListItemButton>
+          </ListItem>
+        </ScrollLink>
+        <Button
+          sx={{
+            backgroundColor: "#db8e35",
+            color: "white",
+            marginTop: "20px",
+            transition: "background-color 0.3s",
+            "&:hover": {
+              backgroundColor: "#f7ac56",
+            },
+          }}
+          variant="contained"
+          onClick={handleDownloadPdf}
+        >
+          Resume <DownloadIcon />
+        </Button>
       </List>
     </Box>
   );
@@ -104,13 +158,76 @@ function Navbar() {
               : "none",
             transition: "background-color 0.3s, position 0.3s, box-shadow 0.3s",
             display: isHeroSectionOver ? "block" : "none",
+            borderBottom: isHeroSectionOver
+              ? "5px solid #db8e35"
+              : "5px solid transparent",
           }}
         >
-          <Toolbar>
+          <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               <img src={logo} alt="logo" className={styles.logoImg} />
             </Typography>
-            <Hidden mdUp>
+
+            <Hidden mdDown sx={{ flexGrow: 1 }}>
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                {navItems.map((item, index) => (
+                  <ScrollLink
+                    activeClass={styles.menuactive}
+                    to={item.href}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className={styles.menu}
+                  >
+                    {item.name}
+                  </ScrollLink>
+                ))}
+              </Box>
+            </Hidden>
+            <Hidden mdDown sx={{ flexGrow: 1 }}>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+                  <Button
+                    sx={{
+                      backgroundColor: "#db8e35",
+                      color: "white",
+                      marginRight: "10px",
+                      transition: "background-color 0.3s",
+                      "&:hover": {
+                        backgroundColor: "#f7ac56",
+                      },
+                    }}
+                    variant="contained"
+                    onClick={handleDownloadPdf}
+                  >
+                    Resume <DownloadIcon />
+                  </Button>
+                  <ScrollLink
+                    to="Contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    <Button
+                      variant="contained"
+                      sx={{
+                        backgroundColor: "#db8e35",
+                        color: "white",
+                        transition: "background-color 0.3s",
+                        "&:hover": {
+                          backgroundColor: "#f7ac56",
+                        },
+                      }}
+                    >
+                      Hire
+                    </Button>
+                  </ScrollLink>
+                </Box>
+              </Typography>
+            </Hidden>
+            <Hidden mdUp sx={{ flexGrow: 1 }}>
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
@@ -121,22 +238,16 @@ function Navbar() {
                 <MenuIcon />
               </IconButton>
             </Hidden>
-            <Hidden mdDown>
-              {navItems.map((item, index) => (
-                <Link
-                  to={item.href}
-                  key={index}
-                  className={
-                    item.href === activeItem ? styles.menuactive : styles.menu
-                  }
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </Hidden>
           </Toolbar>
         </AppBar>
-        <Hidden mdUp>
+        <Hidden
+          mdUp
+          sx={{
+            backgroundImage: isHeroSectionOver
+              ? " linear-gradient(25deg, #011a2e , #071017)"
+              : "tansparent",
+          }}
+        >
           <Drawer
             container={container}
             variant="temporary"
@@ -152,6 +263,9 @@ function Navbar() {
                 boxSizing: "border-box",
                 width: drawerWidth,
                 right: 0,
+                backgroundImage: isHeroSectionOver
+                  ? " linear-gradient(25deg, #011a2e , #071017)"
+                  : "tansparent",
               },
             }}
           >
