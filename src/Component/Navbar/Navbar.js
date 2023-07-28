@@ -221,7 +221,7 @@ function Navbar() {
                         },
                       }}
                     >
-                      Hire
+                      Hire Me
                     </Button>
                   </ScrollLink>
                 </Box>
