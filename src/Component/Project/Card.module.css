@@ -37,14 +37,14 @@
   bottom: 0;
   left: 0;
   right: 0;
-  top: 0; /* Adjust top position to start both contentTop and contentBottom from the top */
+  top: 0;
   padding: 20px;
   text-align: center;
   transform: translateY(-100%);
   opacity: 0;
   backdrop-filter: blur(5px);
   color: white;
-  transition: transform 0.5s, opacity 0.5s; /* Add transition for smoother animations */
+  transition: transform 0.5s, opacity 0.5s;
 }
 
 .card:hover .banner {
@@ -52,19 +52,21 @@
 }
 
 .card:hover .content {
-  transform: translateY(
-    0
-  ); /* Bring both contentTop and contentBottom to their original positions */
+  transform: translateY(0);
   opacity: 1;
 }
 
 .contentTop {
-  /* Add animation to contentTop */
   animation: slideFromTop 0.5s forwards;
 }
 
+.contentTop h1 {
+  color: red;
+  font-size: 25px;
+  font-weight: 600;
+}
+
 .contentBottom {
-  /* Add animation to contentBottom */
   animation: slideFromBottom 0.5s forwards;
 }
 
@@ -90,7 +92,6 @@
   }
 }
 
-/* Center the content inside the card */
 .content {
   display: flex;
   flex-direction: column;

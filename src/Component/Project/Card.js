@@ -12,7 +12,7 @@ function Card({ data }) {
       <img src={data.banner} alt="banner" className={styles.banner}></img>
       <div className={`${styles.content} ${styles[contentPosition]}`}>
         <div className={styles.contentTop}>
-          {name}
+          <h1> {name}</h1>
           <div className={styles.tools}>
             {tools.map((tool, index) => {
               return (
