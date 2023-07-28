@@ -9,18 +9,33 @@
   width: 100%;
 }
 
-.menuactive,
-.menu:hover {
+.menu,
+.menuactive {
+  font-weight: 600;
   color: white;
   margin-left: 10px;
   margin-right: 10px;
-  text-decoration: underline;
+  text-decoration: none;
+  font-size: 16px;
+  transition: margin-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.menuactive {
+  color: #db8e35;
+  border-bottom: 2px solid #db8e35;
+}
+
+.menu:hover,
+.menuactive:hover {
+  color: #db8e35;
+  transition: 0.5s;
+  border-bottom: 2px solid #db8e35;
 }
 
 .logoImg {
-  width: 4rem;
-  height: 4rem;
-  margin: 0.5rem 2rem;
+  width: 10rem;
+  height: 6rem;
 }
 
 .miniheader {
@@ -61,5 +76,10 @@
 @media screen and (max-width: 768px) {
   .miniheader ul {
     flex-direction: column;
+  }
+  .logoImg {
+    width: 8rem;
+    height: 5rem;
+    margin-top: 5px;
   }
 }
