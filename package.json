@@ -26,6 +26,7 @@
     "react-snowstorm": "^0.0.3",
     "react-typed": "^1.2.0",
     "typed.js": "^2.0.12",
+    "vanilla-tilt": "^1.8.0",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
