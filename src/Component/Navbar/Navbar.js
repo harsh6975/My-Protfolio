@@ -32,7 +32,7 @@ const navItems = [
   { name: "HOME", href: "Hero", icon: <AiFillHome /> },
   { name: "ABOUT", href: "About", icon: <SiAboutdotme /> },
   { name: "PROJECT", href: "Project", icon: <AiOutlineFundProjectionScreen /> },
-  { name: "CONTACT", href: "Project", icon: <AiOutlineContacts /> },
+  { name: "CONTACT", href: "Contact", icon: <AiOutlineContacts /> },
 ];
 
 const drawerWidth = 240;
