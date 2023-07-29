@@ -19,6 +19,7 @@
   font-size: 16px;
   transition: margin-bottom 0.3s ease;
   border-bottom: 2px solid transparent;
+  cursor: pointer;
 }
 
 .menuactive {
