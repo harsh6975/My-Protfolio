@@ -16,6 +16,7 @@ import p56 from "../../Images/Project/5/6.png";
 import p57 from "../../Images/Project/5/7.png";
 import p58 from "../../Images/Project/5/8.png";
 import p59 from "../../Images/Project/5/9.png";
+import p61 from "../../Images/Project/6/1.png";
 import p71 from "../../Images/Project/7/1.png";
 import p72 from "../../Images/Project/7/2.png";
 import p73 from "../../Images/Project/7/3.png";
@@ -24,55 +25,79 @@ import p75 from "../../Images/Project/7/5.mp4";
 export const projects = [
   {
     name: "CodeBook",
+    label: "A social media website",
     banner: p11,
-    tools: ["React", "EJS", "MongoDB"],
-    img: [p11, p12, p13, p14, p15],
+    tools: ["NodeJs", "EJS", "MongoDB"],
+    files: [p11, p12, p13, p14, p15],
     link: "https://github.com/harsh6975/CodeBook.git",
     type: "Javascript",
+    description:
+      "The website is a social platform with login authentication, enabling users to connect with friends, share updates, and engage through comments. It employs PassportJS for secure user login and session management. The platform uses ExpressJS to develop RESTful APIs for managing users, posts, and comments. MongoDB serves as the database infrastructure, efficiently storing and managing project data. FrontEnd development uses EJS for dynamic rendering of server-side templates.",
   },
   {
     name: "My Movies",
+    label: "The movies website",
     banner: p21,
     tools: ["React", "Redux"],
-    img: [p21, p22, p23, p24],
+    files: [p21, p22, p23, p24],
     type: "Javascript",
+    link: "mymovies-1e955.web.app/",
+    description:
+      "The website is a movie collection platform that allows users to explore, add, remove, and search for movies. Users can also create lists of their favorite movies for easy access and management",
   },
   {
-    name: "project1",
+    name: "TheraCure",
+    label: "Doctor's website",
     banner: p11,
     tools: [],
-    img: [],
+    files: [],
   },
   {
-    name: "project1",
+    name: "ReviewZone",
+    label: "A mobile application",
     banner: p21,
     tools: [],
-    img: [],
+    files: [],
+    link: "",
+    description: "",
   },
   {
     name: "Bank Management",
+    label: "A console application",
     banner: p51,
     tools: ["C++"],
-    img: [p51, p52, p53, p54, p55, p56, p57, p58, p59],
+    files: [p51, p52, p53, p54, p55, p56, p57, p58, p59],
     type: "C++",
+    link: "https://github.com/harsh6975/Bank-Management.git",
+    description:
+      "The Bank Management System is a C++ console application that provides basic banking functionality. It utilizes Object-Oriented Programming (OOPs) concepts to facilitate tasks related to banking operations, such as account management, transactions, and balance inquiries.",
   },
   {
-    name: "Review Zone",
-    banner: p21,
-    tools: ['React Native'],
-    img: [],
+    name: "Todo App",
+    label: "A mobile application",
+    banner: p61,
+    tools: ["React Native"],
+    files: [],
+    link: "",
+    description: "",
   },
   {
     name: "Snake Game",
+    label: "A gaming website",
     banner: p71,
     tools: ["HTML", "CSS", "Javascript"],
-    img: [p71, p72, p73, p74, p75],
+    files: [p71, p72, p73, p74, p75],
     type: "Javascript",
+    link: "https://github.com/harsh6975/Snake-Game",
+    description:
+      "The Snake Game is a web application built using HTML, CSS, and JavaScript. It offers a classic gaming experience where players control a snake to collect food and grow in size. The objective is to avoid collisions with the snake's own body and the game boundaries, challenging players to achieve the highest possible score.",
   },
   {
     name: "Todo Mobile App",
     banner: p21,
     tools: [],
-    img: [],
+    files: [],
+    link: "",
+    description: "",
   },
 ];

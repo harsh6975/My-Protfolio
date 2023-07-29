@@ -1,12 +1,9 @@
-/* Card.module.css */
-
 .card {
   position: relative;
   width: 390px;
   height: 300px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
-  /* background-color: #db8e35; */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -18,19 +15,15 @@
   backdrop-filter: blur(5px);
   cursor: pointer;
   transition: 0.5s;
+  background-image: linear-gradient(25deg, #011a2e, #071017);
 }
 
 .banner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   border-radius: 15px;
   transition: opacity 0.5s;
 }
-
-/* Card.module.css */
 
 .card .content {
   position: absolute;
@@ -47,6 +40,10 @@
   transition: transform 0.5s, opacity 0.5s;
 }
 
+.card:hover {
+  background-image: none;
+}
+
 .card:hover .banner {
   opacity: 0;
 }
@@ -58,16 +55,20 @@
 
 .contentTop {
   animation: slideFromTop 0.5s forwards;
+  background-image: linear-gradient(25deg, #011a2e, #071017);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .contentTop h1 {
-  color: red;
-  font-size: 25px;
+  color: #db8e35;
+  font-size: 22px;
   font-weight: 600;
 }
 
 .contentBottom {
   animation: slideFromBottom 0.5s forwards;
+  margin-top: 20px;
 }
 
 @keyframes slideFromTop {
@@ -105,10 +106,18 @@
   justify-content: center;
 }
 
+.tool {
+  font-size: 12px;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 350px;
     height: 260px;
+  }
+  .contentTop h1 {
+    font-size: 16px;
+    font-weight: 600;
   }
 }
 

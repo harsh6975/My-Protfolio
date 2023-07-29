@@ -8,10 +8,10 @@ import { projects } from "./data";
 function Project() {
   return (
     <div className={style.container}>
-      <Animation direction="left" duration="08">
+      <Animation direction="bottom" duration="08">
         <h1 className={style.about}>Projects</h1>
       </Animation>
-      <Animation direction="left" duration="1">
+      <Animation direction="top" duration="1">
         <div className={style.underLine}></div>
       </Animation>
       <div className={style.project}>
