@@ -20,7 +20,7 @@ function Info({ data, setInfo }) {
         closeIcon={null}
       >
         <div className={styles.contentTop}>
-          <ImageSlider images={data.images} autoPlay={false} maxImg={1} />
+          <ImageSlider files={data.files} autoPlay={false} maxImg={1} />
           <CancelIcon className={styles.cancel} onClick={() => setInfo(null)} />
         </div>
         <div className={styles.content}>

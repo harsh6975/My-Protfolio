@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styles from "./imagSlider.module.css";
-function ImageSlider({ images, autoPlay, maxImg }) {
+function ImageSlider({ files, autoPlay, maxImg }) {
+  const videoRef = useRef(null);
   const tab = maxImg === 1 ? 1 : 2;
   const responsive = {
     desktop: {
@@ -20,6 +21,17 @@ function ImageSlider({ images, autoPlay, maxImg }) {
       items: 1,
       slidesToSlide: 1, // optional, default to 1.
     },
+  };
+
+  function getFileExtension(fileName) {
+    const parts = fileName.split(".");
+    const fileExtension = parts[parts.length - 1];
+    return fileExtension;
+  }
+
+  const handleVideoEnded = () => {
+    videoRef.current.currentTime = 0;
+    videoRef.current.play();
   };
 
   return (
@@ -42,8 +54,21 @@ function ImageSlider({ images, autoPlay, maxImg }) {
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px"
       >
-        {images.map((img, i) => {
-          return <img src={img} alt={i} className={styles.image}></img>;
+        {files.map((src, i) => {
+          const extension = getFileExtension(src);
+          if (extension === "mp4") {
+            return (
+              <video
+                src={src}
+                autoPlay
+                className={styles.image}
+                onEnded={handleVideoEnded}
+                ref={videoRef}
+              ></video>
+            );
+          } else {
+            return <img src={src} alt={i} className={styles.image}></img>;
+          }
         })}
       </Carousel>
     </div>
