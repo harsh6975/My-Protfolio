@@ -26,11 +26,13 @@ import { AiFillHome } from "react-icons/ai";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { AiOutlineContacts } from "react-icons/ai";
 import { SiAboutdotme } from "react-icons/si";
+import CancelIcon from "@mui/icons-material/Cancel";
 
 const navItems = [
   { name: "HOME", href: "Hero", icon: <AiFillHome /> },
   { name: "ABOUT", href: "About", icon: <SiAboutdotme /> },
   { name: "PROJECT", href: "Project", icon: <AiOutlineFundProjectionScreen /> },
+  { name: "CONTACT", href: "Project", icon: <AiOutlineContacts /> },
 ];
 
 const drawerWidth = 240;
@@ -105,23 +107,6 @@ function Navbar() {
             </ListItem>
           </ScrollLink>
         ))}
-        <ScrollLink
-          activeClass={styles.menuactive}
-          to={"Contact"}
-          spy={true}
-          smooth={true}
-          offset={-70}
-          duration={500}
-          className={styles.menu}
-          onClick={handleDrawerToggle}
-        >
-          <ListItem disablePadding>
-            <ListItemButton sx={{ textAlign: "left", marginLeft: "25%" }}>
-              <AiOutlineContacts />
-              <ListItemText primary="CONTACT" sx={{ marginLeft: "10px" }} />
-            </ListItemButton>
-          </ListItem>
-        </ScrollLink>
         <Button
           sx={{
             backgroundColor: "#db8e35",
@@ -269,6 +254,10 @@ function Navbar() {
               },
             }}
           >
+            <CancelIcon
+              sx={{ marginLeft: "10px", marginTop: "10px", color: "white" }}
+              onClick={handleDrawerToggle}
+            />
             {drawer}
           </Drawer>
         </Hidden>
