@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import styles from "./ImagSlider.module.css";
+import styles from "./ImageSlider.module.css";
+
 function ImageSlider({ files, autoPlay, maxImg }) {
   const videoRef = useRef(null);
   const tab = maxImg === 1 ? 1 : 2;
