@@ -26,13 +26,15 @@ function Info({ data, setInfo }) {
         <div className={styles.content}>
           <h2>
             {data.name}
-            <Tooltip title="Visit" placement="top">
-              <IconButton>
-                <Link to={data.link} target="__blank">
-                  <OpenInNewIcon sx={{ fontSize: "15px" }} />
-                </Link>
-              </IconButton>
-            </Tooltip>
+            {data?.link?.length > 0 && (
+              <Tooltip title="Visit" placement="top">
+                <IconButton>
+                  <Link to={data.link} target="__blank">
+                    <OpenInNewIcon sx={{ fontSize: "15px" }} />
+                  </Link>
+                </IconButton>
+              </Tooltip>
+            )}
           </h2>
           <h5>{data.label}</h5>
           <p>{data.description}</p>
