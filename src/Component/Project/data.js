@@ -20,6 +20,12 @@ import p311 from "../../Images/Project/3/11.png";
 import p313 from "../../Images/Project/3/13.png";
 import p314 from "../../Images/Project/3/14.png";
 import p315 from "../../Images/Project/3/15.png";
+import p41 from "../../Images/Project/4/1.png";
+import p42 from "../../Images/Project/4/2.png";
+import p43 from "../../Images/Project/4/3.png";
+import p44 from "../../Images/Project/4/4.png";
+import p45 from "../../Images/Project/4/5.png";
+import p46 from "../../Images/Project/4/6.png";
 import p51 from "../../Images/Project/5/1.png";
 import p52 from "../../Images/Project/5/2.png";
 import p53 from "../../Images/Project/5/3.png";
@@ -30,11 +36,32 @@ import p57 from "../../Images/Project/5/7.png";
 import p58 from "../../Images/Project/5/8.png";
 import p59 from "../../Images/Project/5/9.png";
 import p61 from "../../Images/Project/6/1.png";
+import p62 from "../../Images/Project/6/2.png";
 import p71 from "../../Images/Project/7/1.png";
 import p72 from "../../Images/Project/7/2.png";
 import p73 from "../../Images/Project/7/3.png";
 import p74 from "../../Images/Project/7/4.png";
 import p75 from "../../Images/Project/7/5.mp4";
+import p81 from "../../Images/Project/8/1.png";
+import p82 from "../../Images/Project/8/2.png";
+import p83 from "../../Images/Project/8/3.png";
+import p84 from "../../Images/Project/8/4.png";
+import p85 from "../../Images/Project/8/5.png";
+import p86 from "../../Images/Project/8/6.png";
+import p87 from "../../Images/Project/8/7.png";
+import p88 from "../../Images/Project/8/8.png";
+import p89 from "../../Images/Project/8/9.png";
+import p810 from "../../Images/Project/8/10.png";
+import p811 from "../../Images/Project/8/11.png";
+import p812 from "../../Images/Project/8/12.png";
+import p813 from "../../Images/Project/8/13.png";
+import p814 from "../../Images/Project/8/14.png";
+import p815 from "../../Images/Project/8/15.png";
+import p816 from "../../Images/Project/8/16.png";
+import p817 from "../../Images/Project/8/17.png";
+import p91 from "../../Images/Project/9/1.png";
+import p92 from "../../Images/Project/9/2.png";
+import p93 from "../../Images/Project/9/3.png";
 export const projects = [
   {
     name: "CodeBook",
@@ -83,13 +110,43 @@ export const projects = [
       "The web application is designed to revolutionize appointment booking and management for doctors and patients. Powered by the dynamic MERN stack (MongoDB, Express.js, React, and Node.js), our platform offers a seamless experience for both healthcare providers and patients. With a comprehensive appointment workflow in place, patients receive timely email notifications upon booking, while administrators efficiently review and respond to appointment requests. Rest assured, we take security seriously by implementing authentication and authorization techniques that adhere to industry best practices and compliance standards, ensuring the safeguarding of patient data. Join us now to embrace a secure and efficient appointment management system, simplifying healthcare interactions for all.",
   },
   {
+    name: "Decode Jobs",
+    label: "Interview preparation website",
+    banner: p41,
+    tools: ["NodeJs", "EJS", "MongoDB"],
+    files: [p41, p42, p43, p44, p45, p46],
+    link: "http://decodejobs-env.eba-yewb8wmp.ap-south-1.elasticbeanstalk.com/",
+    description:
+      "The website is an interview preparation platform that allows users to login and practice topic-wise interview questions. It also enables users to suggest new questions and provides access to interview experiences shared by individuals from different companies. The website is built using Node.js and Express for web technologies and uses MongoDB as the database to store and manage user data and content.",
+    type: "Personal Project",
+  },
+  {
     name: "HeavenX",
     label: "A mobile application",
-    banner: p21,
+    banner: p81,
     tools: ["React", "Node", "MongoDB", "AWS"],
-    files: [],
+    files: [
+      p81,
+      p82,
+      p83,
+      p84,
+      p85,
+      p86,
+      p87,
+      p88,
+      p89,
+      p810,
+      p811,
+      p812,
+      p813,
+      p814,
+      p815,
+      p816,
+      p817,
+    ],
     link: "",
-    description: "",
+    description:
+      "The website is a tourism platform that allows users to book trips, manage supplier fulfillment, and enables administrators to monitor the platform. It utilizes the MERN stack for development, providing a responsive design with customized reusable components in ReactJS. The website incorporates Nodemailer for automated email notifications, JWT for secure authorization, multer for document uploads, Razorpay for payment integration, and is hosted on AWS for reliable performance.",
     type: "Personal Project",
   },
   {
@@ -117,11 +174,12 @@ export const projects = [
   {
     name: "ReviewZone",
     label: "A mobile application",
-    banner: p21,
-    tools: [],
-    files: [],
-    link: "",
-    description: "",
+    banner: p91,
+    tools: ["React Native"],
+    files: [p91, p92, p93],
+    link: "https://github.com/harsh6975/ReviewZone",
+    description:
+      "The mobile app is a review zone platform built with React Native, where users can add and share reviews about anything they like. It provides a simple and user-friendly interface for creating and reading reviews across various topics and categories.",
     type: "Personal Project",
   },
   {
@@ -129,7 +187,7 @@ export const projects = [
     label: "A mobile application",
     banner: p61,
     tools: ["React Native"],
-    files: [p61],
+    files: [p61, p62],
     link: "",
     description:
       "Introducing our Simple Todo Mobile Application, a powerful tool designed to streamline task management and boost productivity. Seamlessly built with React Native, HTML, and CSS, this app offers an intuitive and user-friendly interface for organizing daily tasks. Easily add new to-do items, set due dates, and mark tasks as complete with just a tap.",
