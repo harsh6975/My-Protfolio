@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import styles from "./imagSlider.module.css";
+import styles from "./ImageSlider.module.css";
+
 function ImageSlider({ files, autoPlay, maxImg }) {
   const videoRef = useRef(null);
   const tab = maxImg === 1 ? 1 : 2;
@@ -35,7 +36,7 @@ function ImageSlider({ files, autoPlay, maxImg }) {
   };
 
   return (
-    <div className="imageSlide">
+    <div className={styles.imageSlide}>
       <Carousel
         swipeable={true}
         draggable={false}
@@ -67,7 +68,11 @@ function ImageSlider({ files, autoPlay, maxImg }) {
               ></video>
             );
           } else {
-            return <img src={src} alt={i} className={styles.image}></img>;
+            return (
+              <div className={styles.imageSlideContainer}>
+                <img src={src} alt={i} className={styles.image}></img>
+              </div>
+            );
           }
         })}
       </Carousel>
