@@ -55,27 +55,30 @@ function Hero() {
         </div>
         <ul className={style.social_list}>
           <li>
-            <a href="https://www.linkedin.com/in/harsh-sinha-195328197/">
+            <a href="https://www.linkedin.com/in/harsh6975/" target="__blank">
               <LinkedInIcon className={style.icon} />
             </a>
           </li>
           <li>
-            <a href="mailto: harshu1234ashv@gmail.com">
+            <a href="mailto: harshu1234ashv@gmail.com" target="__blank">
               <EmailIcon className={style.icon} />
             </a>
           </li>
           <li>
-            <a href="https://www.facebook.com/profile.php?id=100037630389435">
+            <a
+              href="https://www.facebook.com/profile.php?id=100037630389435"
+              target="__blank"
+            >
               <FacebookIcon className={style.icon} />
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/harshsinha672/">
+            <a href="https://www.instagram.com/harsh6975_/" target="__blank">
               <InstagramIcon className={style.icon} />
             </a>
           </li>
           <li>
-            <a href="https://github.com/harsh6975">
+            <a href="https://github.com/harsh6975" target="__blank">
               <GitHubIcon className={style.icon} />
             </a>
           </li>
