@@ -52,9 +52,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .container {
-    height: 70vh;
-  }
   .form {
     width: 90%;
   }

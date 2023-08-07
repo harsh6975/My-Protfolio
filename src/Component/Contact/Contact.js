@@ -48,14 +48,14 @@ function Contact() {
           label="Name"
           placeholder="Name"
           className="textfield"
-          sx={{ margin: "10px", width: "80%" }}
+          sx={{ margin: "10px", width: "90%" }}
         />
         <CssTextField
           id="outlined-textarea"
           label="Email"
           placeholder="Email"
           className="textfield"
-          sx={{ margin: "10px", width: "80%" }}
+          sx={{ margin: "10px", width: "90%" }}
         />
         <CssTextField
           id="outlined-textarea"
@@ -66,7 +66,7 @@ function Contact() {
           rows={5}
           maxRows={5}
           variant="outlined"
-          sx={{ margin: "10px", width: "80%" }}
+          sx={{ margin: "10px", width: "90%" }}
         />
         <Button
           sx={{
