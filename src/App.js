@@ -5,6 +5,7 @@ import Navbar from "./Component/Navbar/Navbar";
 import About from "./Component/About/About";
 import Project from "./Component/Project/Project";
 import Contact from "./Component/Contact/Contact";
+import Footer from "./Component/Footer/Footer";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </section>
         <section id="Contact">
           <Contact />
+        </section>
+        <section id="Footer">
+          <Footer />
         </section>
       </div>
     </BrowserRouter>
