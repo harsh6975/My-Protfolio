@@ -5,11 +5,14 @@ import Navbar from "./Component/Navbar/Navbar";
 import About from "./Component/About/About";
 import Project from "./Component/Project/Project";
 import Contact from "./Component/Contact/Contact";
+import Footer from "./Component/Footer/Footer";
+import ArrowToTop from "./utils/Arrow/ArrowToTop";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <ArrowToTop />
         <Navbar />
         <section id="Hero">
           <Hero />
@@ -22,6 +25,9 @@ function App() {
         </section>
         <section id="Contact">
           <Contact />
+        </section>
+        <section id="Footer">
+          <Footer />
         </section>
       </div>
     </BrowserRouter>
