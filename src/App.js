@@ -6,11 +6,13 @@ import About from "./Component/About/About";
 import Project from "./Component/Project/Project";
 import Contact from "./Component/Contact/Contact";
 import Footer from "./Component/Footer/Footer";
+import ArrowToTop from "./utils/Arrow/ArrowToTop";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <ArrowToTop />
         <Navbar />
         <section id="Hero">
           <Hero />
