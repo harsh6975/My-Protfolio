@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Animation from "../../utils/SideAnimation/Animation";
 import style from "./Contact.module.css";
 import { Button, TextField } from "@mui/material";
 import { withStyles } from "@material-ui/core/styles";
+import axios from "axios";
+import SnackbarComponent from "../../utils/Notification/Notification";
 
 const CssTextField = withStyles({
   root: {
@@ -34,8 +36,70 @@ const CssTextField = withStyles({
 })(TextField);
 
 function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [error, setError] = useState({
+    name: false,
+    email: false,
+    message: false,
+  });
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+
+  const handleForm = (value, name) => {
+    const newForm = { ...form };
+    newForm[name] = value;
+    setForm(newForm);
+  };
+
+  const handleSubmit = async () => {
+    const newError = { ...error };
+    let isError = false;
+    if (!form?.name?.length) {
+      isError = true;
+      newError.name = true;
+    }
+    if (!form?.email?.length || !form?.email?.includes("@")) {
+      newError.email = true;
+      isError = true;
+    }
+    if (!form?.message?.length) {
+      newError.message = true;
+      isError = true;
+    }
+
+    if (isError) {
+      setError(newError);
+      return;
+    } else {
+      setError({ name: false, email: false, message: false });
+    }
+
+    const res = await axios.post(
+      `${process.env.REACT_APP_SERVER}/forms/personalWeb`,
+      form
+    );
+
+    const data = res.data;
+    const success = data.success;
+    setSnackbarMessage("Thank you, will contact you soon.");
+    if (success) {
+      setSnackbarSeverity("success");
+      setForm({ name: "", email: "", message: "" });
+    } else {
+      setSnackbarSeverity("error");
+    }
+    setOpenSnackbar(true);
+  };
+
   return (
     <div className={style.container}>
+      <SnackbarComponent
+        message={snackbarMessage}
+        severity={snackbarSeverity}
+        open={openSnackbar}
+        onClose={() => setOpenSnackbar(false)}
+      />
       <Animation direction="top" duration="08">
         <h1 className={style.about}>Get In Touch</h1>
       </Animation>
@@ -49,6 +113,10 @@ function Contact() {
           placeholder="Name"
           className="textfield"
           sx={{ margin: "10px", width: "90%" }}
+          onChange={(e) => handleForm(e.target.value, "name")}
+          helperText={error.name ? "Please write your name." : ""}
+          error={error.name}
+          value={form.name}
         />
         <CssTextField
           id="outlined-textarea"
@@ -56,6 +124,10 @@ function Contact() {
           placeholder="Email"
           className="textfield"
           sx={{ margin: "10px", width: "90%" }}
+          onChange={(e) => handleForm(e.target.value, "email")}
+          helperText={error.email ? "Please write your valid email." : ""}
+          error={error.email}
+          value={form.email}
         />
         <CssTextField
           id="outlined-textarea"
@@ -67,6 +139,10 @@ function Contact() {
           maxRows={5}
           variant="outlined"
           sx={{ margin: "10px", width: "90%" }}
+          onChange={(e) => handleForm(e.target.value, "message")}
+          helperText={error.message ? "Please leave a message." : ""}
+          error={error.message}
+          value={form.message}
         />
         <Button
           sx={{
@@ -81,6 +157,7 @@ function Contact() {
             width: "90%",
           }}
           variant="contained"
+          onClick={handleSubmit}
         >
           Send
         </Button>
