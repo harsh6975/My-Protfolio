@@ -78,7 +78,7 @@ function Contact() {
               backgroundColor: "#f7ac56",
             },
             margin: "10px",
-            width: "80%",
+            width: "90%",
           }}
           variant="contained"
         >
