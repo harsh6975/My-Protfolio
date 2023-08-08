@@ -5,6 +5,9 @@ import { Button, TextField } from "@mui/material";
 import { withStyles } from "@material-ui/core/styles";
 import axios from "axios";
 import SnackbarComponent from "../../utils/Notification/Notification";
+import SendIcon from "@mui/icons-material/Send";
+import LoadingButton from "@mui/lab/LoadingButton";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const CssTextField = withStyles({
   root: {
@@ -45,6 +48,7 @@ function Contact() {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+  const [loading, setLoading] = useState(false);
 
   const handleForm = (value, name) => {
     const newForm = { ...form };
@@ -53,6 +57,8 @@ function Contact() {
   };
 
   const handleSubmit = async () => {
+    console.log("click");
+    setLoading(true);
     const newError = { ...error };
     let isError = false;
     if (!form?.name?.length) {
@@ -70,6 +76,7 @@ function Contact() {
 
     if (isError) {
       setError(newError);
+      setLoading(false);
       return;
     } else {
       setError({ name: false, email: false, message: false });
@@ -90,6 +97,7 @@ function Contact() {
       setSnackbarSeverity("error");
     }
     setOpenSnackbar(true);
+    setLoading(false);
   };
 
   return (
@@ -145,19 +153,28 @@ function Contact() {
           value={form.message}
         />
         <Button
+          endIcon={
+            loading ? (
+              <CircularProgress size={20} color="inherit" />
+            ) : (
+              <SendIcon />
+            )
+          }
           sx={{
-            backgroundColor: "#db8e35",
-            color: "white",
             marginTop: "20px",
-            transition: "background-color 0.3s",
-            "&:hover": {
-              backgroundColor: "#f7ac56",
+            "&.MuiButton-contained": {
+              backgroundColor: "#db8e35",
+              color: "white",
+              "&:hover": {
+                backgroundColor: "#f7ac56",
+              },
             },
-            margin: "10px",
             width: "90%",
           }}
           variant="contained"
           onClick={handleSubmit}
+          loading={loading}
+          disabled={loading}
         >
           Send
         </Button>
