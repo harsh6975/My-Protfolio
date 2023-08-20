@@ -39,7 +39,7 @@
 
 .details {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   margin: 20px;
   width: 100%;
@@ -47,6 +47,36 @@
 
 .profile {
   margin-top: 10px;
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 43%;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 1415px) {
+  .skills {
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .skills {
+    max-width: 55%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .skills {
+    max-width: 80%;
+  }
+  .details {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -72,5 +102,12 @@
   .underLine {
     margin-bottom: 50px;
     width: 50px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .skills {
+    align-items: center;
+    justify-content: center;
   }
 }

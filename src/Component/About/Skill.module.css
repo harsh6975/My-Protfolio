@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(25deg, #011a2e, #071017);
+  flex-wrap: wrap;
+  margin: 10px;
+  height: 120px;
+  width: 140px;
+  border-radius: 5px;
+}
+
+.image {
+  height: 80px;
+  width: 100px;
+}
+
+.label {
+  color: #db8e35;
+}
+
+@media screen and (max-width: 1525px) {
+  .container {
+    height: 100px;
+    width: 130px;
+  }
+
+  .image {
+    height: 60px;
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    height: 80px;
+    width: 110px;
+  }
+
+  .image {
+    height: 50px;
+    width: 70px;
+  }
+  .label {
+    font-size: 12px;
+  }
+}
