@@ -31,3 +31,18 @@
     width: 80px;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .container {
+    height: 80px;
+    width: 110px;
+  }
+
+  .image {
+    height: 50px;
+    width: 70px;
+  }
+  .label {
+    font-size: 12px;
+  }
+}
