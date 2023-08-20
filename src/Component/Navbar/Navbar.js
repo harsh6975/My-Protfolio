@@ -17,8 +17,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import styles from "./Navbar.module.css";
 import { Link as ScrollLink } from "react-scroll";
-
-import MiniNavbar from "./MiniNavbar";
 import logo from "../../Images/logo.png";
 import DownloadIcon from "@mui/icons-material/Download";
 import resume from "../../Images/Harsh Sinha Resume.pdf";
@@ -128,7 +126,6 @@ function Navbar() {
   const container = undefined;
   return (
     <>
-      {isHeroSectionOver && <MiniNavbar />}
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar
