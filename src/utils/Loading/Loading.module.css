@@ -1,0 +1,13 @@
+.loading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.img {
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
+}
